@@ -1,8 +1,12 @@
+import React from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Routes>
+      <Route path='login' element={<Login />} />
+      <Route path='/*' element={<Home />} />
+    </Routes>
   );
 }
 
