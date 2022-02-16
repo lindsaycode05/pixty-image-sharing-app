@@ -34,7 +34,7 @@ const Home = () => {
         <Sidebar user={user && user} />
       </div>
       <div className='home__mobile flex'>
-        <HiMenu fontSize={40} onClick={() => setToggleSidebar(true)} />
+        <HiMenu className='hamburger-menu' fontSize={40} onClick={() => setToggleSidebar(true)} />
         <Link to='/'>
           <img src={logo} alt='logo' />
         </Link>

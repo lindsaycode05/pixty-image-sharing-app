@@ -5,11 +5,46 @@
     display: none;
   }
   &__mobile {
-    img[alt=logo] {
+    img[alt='logo'] {
       width: 8rem;
     }
-    img[alt=user] {
-        width: 4rem;
+    img[alt='user'] {
+      width: 4rem;
+    }
+    .hamburger-menu {
+      cursor: pointer;
+    }
+
+    &-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      background-color: white;
+      min-height: 100vh;
+      z-index: 5;
+      animation: slide 0.6s ease-in-out;
+      box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.131);
+
+      .close-icon {
+        position: absolute;
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        svg {
+          margin: 0.45rem 0.45rem 0 0;
+          cursor: pointer;
+        }
       }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
   }
 }
