@@ -1,1 +1,12 @@
 @use '../../helpers/variables' as v;
+
+.home {
+  &__desktop {
+    display: none;
+  }
+  &__mobile {
+    img {
+      width: 8rem;
+    }
+  }
+}
