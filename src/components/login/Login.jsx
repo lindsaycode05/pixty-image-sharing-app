@@ -8,9 +8,13 @@ import shareVideo from '../../assets/share.mp4';
 import logo from '../../assets/logo.png';
 
 const Login = () => {
+const responseGoogle = (response) => {
+
+}
+
   return (
     <div className='login'>
-      <div className="video-overlay"></div>
+      <div className='video-overlay'></div>
       <video
         src={shareVideo}
         type='video/mp4'
@@ -21,14 +25,20 @@ const Login = () => {
       ></video>
       <div className='login__form flex-col'>
         <img src={logo} alt='logo' />
-        <GoogleLogin 
-        clientId=''
-        render={(renderProps) => (
-         <button
-         className='flex' >
-            <FcGoogle/> Sign in with Google
-         </button>
-        )}
+        <GoogleLogin
+          clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
+          render={(renderProps) => (
+            <button
+              className='flex'
+              onClick={renderProps.onClick}
+              disabled={renderProps.disabled}
+            >
+              <FcGoogle /> Sign in with Google
+            </button>
+          )}
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy='single_host_origin'
         />
       </div>
     </div>
