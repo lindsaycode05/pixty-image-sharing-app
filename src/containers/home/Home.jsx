@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className='home'>
       <div className='home__desktop'>
-        <Sidebar />
+        <Sidebar user={user && user} />
       </div>
       <div className='home__mobile flex'>
         <HiMenu fontSize={40} onClick={() => setToggleSidebar(true)} />
@@ -39,8 +39,20 @@ const Home = () => {
           <img src={logo} alt='logo' />
         </Link>
         <Link to={`user-profile/${user?._id}`}>
-          {/* <img src={logo} alt="logo" /> */}
+          <img src={user?.image} alt='user' />
         </Link>
+        
+        {toggleSidebar && (
+          <div className='home__mobile-menu flex-col'>
+            <div className='close-icon'>
+              <AiFillCloseCircle
+                fontSize={30}
+                onClick={() => setToggleSidebar(false)}
+              />
+            </div>
+            <Sidebar user={user && user} closeToggle={setToggleSidebar} />
+          </div>
+        )}
       </div>
     </div>
   );

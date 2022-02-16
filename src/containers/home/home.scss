@@ -5,8 +5,11 @@
     display: none;
   }
   &__mobile {
-    img {
+    img[alt=logo] {
       width: 8rem;
     }
+    img[alt=user] {
+        width: 4rem;
+      }
   }
 }
