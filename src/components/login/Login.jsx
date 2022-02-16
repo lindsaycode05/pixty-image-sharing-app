@@ -8,9 +8,18 @@ import shareVideo from '../../assets/share.mp4';
 import logo from '../../assets/logo.png';
 
 const Login = () => {
-const responseGoogle = (response) => {
+  const responseGoogle = (response) => {
+    localStorage.setItem('user', JSON.stringify(response.profileObj));
 
-}
+    const { name, googleId, imageUrl } = response.profileObj;
+
+    const doc = {
+      _id: googleId,
+      _type: 'user',
+      userName: name,
+      image: imageUrl,
+    };
+  };
 
   return (
     <div className='login'>
