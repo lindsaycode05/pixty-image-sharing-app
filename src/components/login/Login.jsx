@@ -10,6 +10,7 @@ import logo from '../../assets/logo.png';
 const Login = () => {
   return (
     <div className='login'>
+      <div className="video-overlay"></div>
       <video
         src={shareVideo}
         type='video/mp4'

@@ -1,7 +1,45 @@
 @use '../../helpers/variables' as v;
 
-.login{
-    position: relative;
+.login {
+  position: relative;
+  video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  .video-overlay {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+  }
 
-    
+  &__form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    img {
+      width: 13rem;
+    }
+    button {
+      border: 0;
+      background-color: white;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      gap: 0.5rem;
+      justify-content: center;
+      padding: 0.8rem;
+      border-radius: 1rem;
+      font-size: 1rem;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
 }
