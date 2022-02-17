@@ -1,11 +1,10 @@
-import './pins.scss'
-import '../../helpers/_utils.scss'
-import React from 'react'
+import './pins.scss';
+import '../../helpers/_utils.scss'; 
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 const Pins = () => {
-  return (
-    <div>Pins</div>
-  )
-}
+  return <div>Pins</div>;
+};
 
-export default Pins
+export default Pins;

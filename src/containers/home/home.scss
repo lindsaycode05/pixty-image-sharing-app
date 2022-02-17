@@ -57,3 +57,13 @@
     left: 0;
   }
 }
+
+@media only screen and (min-width: 810px) {
+  .home__mobile {
+    display: none;
+  }
+  .home__desktop {
+    display: block;
+    width: 30%;
+  }
+}
