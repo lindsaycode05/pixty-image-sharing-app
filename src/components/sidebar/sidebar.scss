@@ -1,0 +1,93 @@
+@use '../../helpers/variables' as v;
+
+.sidebar {
+  padding: 0.5rem;
+  justify-content: space-between;
+  height: 100vh;
+  &:nth-child(3) {
+    display: none;
+  }
+  &__title {
+    gap: 1.1rem;
+
+    a {
+      z-index: 9;
+      cursor: default;
+      img {
+        cursor: pointer;
+        width: 8rem !important;
+      }
+    }
+    &-home {
+      a {
+        cursor: pointer;
+        gap: 0.5rem;
+        &:last-child {
+          margin-left: 0.6rem;
+          margin-top: 0.3rem;
+        }
+      }
+    }
+    &-links {
+      margin-left: 0.6rem;
+      gap: 1rem;
+
+      h3 {
+        font-size: 1.065rem;
+        background: linear-gradient(
+          344deg,
+          rgba(243, 87, 208, 1) 41%,
+          rgba(0, 244, 214, 1) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 0.3rem;
+      }
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__user {
+    margin-left: 0.6rem;
+    a {
+      gap: 0.6rem;
+      &:hover img,
+      &:hover p {
+        opacity: 0.7;
+      }
+    }
+    img {
+      width: 2.5rem;
+      border-radius: 50%;
+      transition: 0.2s;
+    }
+    p {
+      font-size: 0.95rem;
+      transition: 0.2s;
+      color: black;
+    }
+  }
+}
+
+.active {
+  transition: 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: #000;
+  &:hover {
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.inactive {
+  transition: 0.2s;
+  text-decoration: none;
+  color: rgb(100, 100, 100);
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
+}
