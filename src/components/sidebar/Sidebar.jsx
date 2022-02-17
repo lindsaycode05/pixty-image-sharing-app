@@ -2,7 +2,7 @@ import '../../helpers/_utils.scss';
 import './sidebar.scss';
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { RiHomeFill } from 'react-icons/ri';
+import { TiHome } from 'react-icons/ti';
 import { IoIosArrowForward } from 'react-icons/io';
 import logo from '../../assets/logo.png';
 
@@ -32,10 +32,10 @@ const Sidebar = ({ user, closeToggle }) => {
   return (
     <div className='sidebar flex-col'>
       <div className='sidebar__title flex-col'>
-        <Link to='/' onClick={handleCloseSidebar}>
-          <img src={logo} alt='logo' />
-        </Link>
-        <div className='sidebar__title-home flex'>
+        <div className='sidebar__title-home flex-col'>
+          <Link to='/' onClick={handleCloseSidebar}>
+            <img src={logo} alt='logo' />
+          </Link>
           <NavLink
             to='/'
             className={({ isActive }) =>
@@ -43,25 +43,38 @@ const Sidebar = ({ user, closeToggle }) => {
             }
             onClick={handleCloseSidebar}
           >
-            <RiHomeFill /> Home
+            <TiHome /> Home
           </NavLink>
         </div>
+        <div className='sidebar__title-links flex-col'>
+          <h3>Browse categories</h3>
+          {categories.slice(0, categories.length - 1).map((category) => (
+            <NavLink
+              to={`/category/${category.name}`}
+              className={({ isActive }) =>
+                isActive ? 'active flex' : 'inactive flex'
+              }
+              onClick={handleCloseSidebar}
+              key={category.name}
+            >
+              {category.name}
+            </NavLink>
+          ))}
+        </div>
       </div>
-      <div className='sidebar__links flex-col'>
-        <h3>Discover categories</h3>
-        {categories.slice(0, categories.length - 1).map((category) => (
-          <NavLink
-            to={`/category/${category.name}`}
-            className={({ isActive }) =>
-              isActive ? 'active flex' : 'inactive flex'
-            }
+
+      {user && (
+        <div className='sidebar__user'>
+          <Link
+            to={`/user-profile/${user._id}`}
+            className='flex'
             onClick={handleCloseSidebar}
-            key={category.name}
           >
-            {category.name}
-          </NavLink>
-        ))}
-      </div>
+            <img src={user.image} alt='user-profile' />
+            <p>{user.userName}</p>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
