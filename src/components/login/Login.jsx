@@ -4,7 +4,7 @@ import './login.scss';
 import GoogleLogin from 'react-google-login';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
-import shareVideo from '../../assets/share.mp4';
+import pixtyVideo from '../../assets/pixty.mp4';
 import logo from '../../assets/logo.png';
 import { client } from '../../client';
 
@@ -31,7 +31,7 @@ const Login = () => {
     <div className='login'>
       <div className='video-overlay'></div>
       <video
-        src={shareVideo}
+        src={pixtyVideo}
         type='video/mp4'
         loop
         controls={false}
